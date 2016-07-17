@@ -6,6 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 import java.time.DateTimeException;
+<<<<<<< HEAD
+=======
+import java.time.Instant;
+>>>>>>> fae1e65e6c3fe45b9d1b460ec7e9879dc5862519
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -17,6 +21,10 @@ import java.time.format.DateTimeFormatter;
 public class Touch {
     public static void main(String[] args) throws DateTimeException, IOException
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> fae1e65e6c3fe45b9d1b460ec7e9879dc5862519
         if (args.length != 1 && args.length != 5) {
             System.err.println("Usage: java Touch [-d yyyy.MM.dd HH.mm.ss z] pathname");
             System.exit(1);
@@ -24,10 +32,17 @@ public class Touch {
 
         if (!args[0].equals("-d")) {
             Path p1 = Paths.get(args[0]);
+<<<<<<< HEAD
             ZonedDateTime now = ZonedDateTime.now();
             Files.setLastModifiedTime(p1, FileTime.from(now.toInstant()));
 
             System.out.println("Time: " + now.toString());
+=======
+//            ZonedDateTime now = ZonedDateTime.now();
+            Files.setLastModifiedTime(p1, FileTime.from(Instant.now()));
+
+//            System.out.println("Time: " + now.toString());
+>>>>>>> fae1e65e6c3fe45b9d1b460ec7e9879dc5862519
         }
 
         else
